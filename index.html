@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <title>Happy Birthday!!! :)</title>
+  <title>Happy Birthday!!! Rose :)</title>
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,42 +21,30 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       color: #fff;
-    }
-
-    @media screen and (max-width: 768px) {
-      #bg-video {
-        height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      z-index: 1;
+      &::before{
+        background-color: #000000b0;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 100%;
-        object-fit: cover;
+        height: 100%;
+        z-index: -1;
       }
     }
+
+
 
     .song {
       visibility: hidden;
     }
 
-    #bg-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -2;
-      object-fit: cover;
-    }
 
-    #video-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.678);
-      /* Adjust the last value (0.5) for overlay opacity */
-      z-index: -1;
-    }
 
     .container {
       height: 100vh;
@@ -187,13 +175,11 @@
       display: inline-block;
       height: 350px;
       max-width: 100%;
-      /* height: auto; */
     }
 
     .six .hat {
       left: 41.5%;
       position: absolute;
-      /* transform: scale(0.1); */
       top: -35%;
       width: 80px;
     }
@@ -373,13 +359,7 @@
 
 </head>
 
-<body>
-  <div id="video-overlay"></div>
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="./music/birthday-bg.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <!-- ... (rest of the body content) ... -->
+<body style="background-image: url('music/body.jpg');">
   <audio class="song" loop autoplay>
     <source src="./music/hbd.mpeg">
     </source>
@@ -422,7 +402,7 @@
       </p>
       <p class="idea-4">Because,</p>
       <p class="idea-5">
-        You are Special
+        You are Awesome Girl
         <span>:)</span>
       </p>
       <p class="idea-6">
@@ -436,7 +416,7 @@
       <img src="img/hat.svg" alt="hat" class="hat" />
       <div class="wish">
         <h3 class="wish-hbd">Happy Birthday Rose!</h3>
-        <h5 id="wishText">Someday I will take you to the mountains. ;)</h5>
+        <h5 id="wishText">My Dream Someday I will take you to the mountains. ;)</h5>
       </div>
     </div>
 
@@ -521,7 +501,6 @@
 <!-- Sweetalert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  // trigger to play music in the background with sweetalert
   window.addEventListener('load', () => {
     Swal.fire({
       title: 'Please Rose ! Click the Button ',
@@ -539,23 +518,7 @@
 
 
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var video = document.getElementById('bg-video');
 
-    // Function to play video
-    function playVideo() {
-      video.play().catch(function (error) {
-        console.log("Video play failed:", error);
-      });
-    }
-
-    // Play video
-    playVideo();
-
-    // On mobile, wait for user interaction to play video
-    document.body.addEventListener('click', playVideo);
-    document.body.addEventListener('touchstart', playVideo);
-  });
 
 
 
@@ -841,3 +804,4 @@
 </script>
 
 </html>
+
